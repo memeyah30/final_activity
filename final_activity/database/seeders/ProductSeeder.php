@@ -36,7 +36,7 @@ class ProductSeeder extends Seeder
         Product::create([
             'name' => 'Stainless Steel Water Bottle',
             'description' => 'Insulated water bottle keeps drinks cold for 24 hours or hot for 12 hours.',
-            'price' => 24.99,
+            'price' => 25.00,
         ]);
     }
 }
