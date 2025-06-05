@@ -30,7 +30,7 @@ class ProductSeeder extends Seeder
         Product::create([
             'name' => 'Ergonomic Office Chair',
             'description' => 'Adjustable ergonomic chair with lumbar support for all-day comfort.',
-            'price' => 199.99,
+            'price' => 200.00,
         ]);
 
         Product::create([
