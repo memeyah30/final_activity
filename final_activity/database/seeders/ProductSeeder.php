@@ -24,7 +24,7 @@ class ProductSeeder extends Seeder
         Product::create([
             'name' => 'Portable Phone Charger',
             'description' => 'Compact 10000mAh power bank for charging phones on the go.',
-            'price' => 29.99,
+            'price' => 30.00,
         ]);
 
         Product::create([
