@@ -19,23 +19,15 @@
     </style>
 </head>
 <body>
-
 <h2 style="text-align:center;">Login</h2>
 
-@if ($errors->any())
-    <div style="color:red;text-align:center;">
-        @foreach ($errors->all() as $error)
-            <p>{{ $error }}</p>
-        @endforeach
-    </div>
-@endif
-
-<form method="POST" action="/login">
+<form method="POST" action="/login" style="width:300px;margin:auto;">
     @csrf
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="password" name="password" placeholder="Password" required>
+    <input type="email" name="email" placeholder="Email" required><br><br>
+    <input type="password" name="password" placeholder="Password" required><br><br>
     <button type="submit">Login</button>
 </form>
 
+<p style="text-align:center;"><a href="/register">Don't have an account? Register</a></p>
 </body>
 </html>
