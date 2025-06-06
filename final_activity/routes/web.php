@@ -1,9 +1,20 @@
 <?php
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', [ProductController::class, 'index']);
+
+
+// Login Routes
+Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+// Protected routes
+Route::get('/', [ProductController::class, 'index'])->middleware('auth');
+
+
 Route::get('/products/create', [ProductController::class, 'create']);
 Route::post('/products', [ProductController::class, 'store']);
 

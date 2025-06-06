@@ -20,6 +20,11 @@
     </style>
 </head>
 <body>
+    <form method="POST" action="/logout" style="text-align:right; margin: 10px;">
+    @csrf
+    <button type="submit">Logout</button>
+</form>
+
 
     <p style="text-align:center;">
     <a href="/products/create">➕ Add New Product</a>
