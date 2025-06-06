@@ -20,6 +20,11 @@
     </style>
 </head>
 <body>
+    
+    <p style="text-align:center;">
+    <a href="/products/create">➕ Add New Product</a>
+</p>
+
 
 <h1 style="text-align:center;">Product List</h1>
 
@@ -45,6 +50,8 @@
 @else
     <p style="text-align:center;">No products found.</p>
 @endif
+
+
 
 </body>
 </html>

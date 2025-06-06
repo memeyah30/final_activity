@@ -4,11 +4,13 @@ namespace Database\Seeders;
 
 use App\Models\Product;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class ProductSeeder extends Seeder
 {
     public function run()
     {
+         DB::table('products')->truncate();
         Product::create([
             'name' => 'Wireless Bluetooth Headphones',
             'description' => 'High-quality wireless headphones with noise cancellation and 20-hour battery life.',
@@ -18,7 +20,7 @@ class ProductSeeder extends Seeder
         Product::create([
             'name' => 'Smart Fitness Watch',
             'description' => 'Waterproof fitness tracker with heart rate monitor and GPS.',
-            'price' => 149.99,
+            'price' => 150.00,
         ]);
 
         Product::create([
