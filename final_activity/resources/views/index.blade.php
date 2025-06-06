@@ -20,7 +20,7 @@
     </style>
 </head>
 <body>
-    
+
     <p style="text-align:center;">
     <a href="/products/create">➕ Add New Product</a>
 </p>
@@ -29,24 +29,34 @@
 <h1 style="text-align:center;">Product List</h1>
 
 @if($products->count())
-    <table>
-        <thead>
+  <table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price (PHP)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach($products as $product)
             <tr>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Price (USD)</th>
+                <td>{{ $product->name }}</td>
+                <td>{{ $product->description }}</td>
+                <td>P {{ number_format($product->price, 2) }}</td>
+                <td>
+                    <a href="/products/{{ $product->id }}/edit">✏️ Edit</a>
+                    <form action="/products/{{ $product->id }}" method="POST" style="display:inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" onclick="return confirm('Are you sure?')">🗑️ Delete</button>
+                    </form>
+                </td>
             </tr>
-        </thead>
-        <tbody>
-            @foreach($products as $product)
-                <tr>
-                    <td>{{ $product->name }}</td>
-                    <td>{{ $product->description }}</td>
-                    <td>P {{ number_format($product->price, 2) }}</td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
+        @endforeach
+    </tbody>
+</table>
+
 @else
     <p style="text-align:center;">No products found.</p>
 @endif
